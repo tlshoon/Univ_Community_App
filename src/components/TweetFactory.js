@@ -50,6 +50,22 @@ const TweetFactory = ({ userObj }) => {
 
   return (
     <form onSubmit={onSubmit} className="factoryForm">
+
+      <label htmlFor="attach-file" className="factoryInput__label">
+        <span>Add photos</span>
+        <FontAwesomeIcon icon={faPlus} />
+      </label>
+
+      {attachment && (
+        <div className="factoryForm__attachment">
+          <img src={attachment} style={{ backgroundImage: attachment,}} />
+          <div className="factoryForm__clear" onClick={ClearAttachment}>
+            <span>Remove</span>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+        </div>
+      )}
+
       <div className="factoryInput__container">
         <input
           className="factoryInput__input"
@@ -61,10 +77,7 @@ const TweetFactory = ({ userObj }) => {
         />
         <input type="submit" value="&rarr;" className="factoryInput__arrow" />
       </div>
-      <label htmlFor="attach-file" className="factoryInput__label">
-        <span>Add photos</span>
-        <FontAwesomeIcon icon={faPlus} />
-      </label>
+
 
       <input
         id="attach-file"
@@ -76,15 +89,7 @@ const TweetFactory = ({ userObj }) => {
         }}
       />
 
-      {attachment && (
-        <div className="factoryForm__attachment">
-          <img src={attachment} style={{ backgroundImage: attachment,}} />
-          <div className="factoryForm__clear" onClick={ClearAttachment}>
-            <span>Remove</span>
-            <FontAwesomeIcon icon={faTimes} />
-          </div>
-        </div>
-      )}
+
     </form>
   );
 };
