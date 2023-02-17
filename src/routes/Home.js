@@ -16,7 +16,7 @@ const Home = ({ userObj }) => {
   //       setTweets((prev) => [tweetObject, ...prev]);
   //     });
   //   };
-
+  
   useEffect(() => {
     // 컴포넌트 마운트 됐을 때 실행
     // getTweets();
@@ -41,6 +41,7 @@ const Home = ({ userObj }) => {
             key={tweet.id}
             Tweetobj={tweet}
             isOwner={tweet.creatorId === userObj.uid}
+            userObj={userObj}
           />
         ))}
       </div>

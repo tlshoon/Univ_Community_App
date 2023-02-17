@@ -1,10 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faGoogle,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faSchool } from "@fortawesome/free-solid-svg-icons";
 import { authService, firebaseInstance } from "../fbase";
 import AuthForm from "../components/AuthForm";
 
@@ -21,8 +18,9 @@ const Auth = () => {
 
   return (
     <div className="authContainer">
+  
       <FontAwesomeIcon
-        icon={faTwitter}
+        icon={faSchool}
         color={"#04AAFF"}
         size="3x"
         style={{ marginBottom: 30 }}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { authService } from "../fbase";
 
-const Profile = ({ refreshUser, userObj }) => {
+const Profile = ({ refreshUser, userObj, parentFunction }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const onLogOutClick = () => {

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   HashRouter as Router,
   Redirect,
@@ -20,6 +21,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
             style={{
               maxWidth: 890,
               width: "100%",
+              height: "100%",
               margin: "0 auto",
               marginTop: 20,
               display: "flex",

@@ -9,10 +9,11 @@ const TweetFactory = ({ userObj }) => {
   const [attachment, setAttachment] = useState("");
 
   const onSubmit = async (e) => {
+    e.preventDefault();
+    // window.scrollTo(0,document.body.scrollHeight)
     if (tweet === "") {
       return;
     }
-    e.preventDefault();
     let attachmentUrl = "";
     if (attachment !== "") {
       const attachmentRef = storageService
@@ -26,6 +27,7 @@ const TweetFactory = ({ userObj }) => {
       createdAt: Date.now(),
       creatorId: userObj.uid,
       attachmentUrl,
+      profileName: userObj.displayName,
     };
     await dbService.collection("tweets").add(tweetObj); // 폼 제출하면 tweets컬렉션에 트윗 추가하기
     setTweet(""); // 추가하고 나면 빈칸으로
@@ -50,11 +52,21 @@ const TweetFactory = ({ userObj }) => {
 
   return (
     <form onSubmit={onSubmit} className="factoryForm">
-
+      
+      <input
+        id="attach-file"
+        type="file"
+        accept="image/*"
+        onChange={onFileChange}
+        style={{
+          opacity: 0,
+        }}
+      />
       <label htmlFor="attach-file" className="factoryInput__label">
-        <span>Add photos</span>
+        {/* <span>Add photos</span> */}
         <FontAwesomeIcon icon={faPlus} />
       </label>
+
 
       {attachment && (
         <div className="factoryForm__attachment">
@@ -72,22 +84,11 @@ const TweetFactory = ({ userObj }) => {
           value={tweet}
           onChange={onChange}
           type="text"
-          placeholder="What's on your mind?"
+          placeholder="메세지를 입력해주세요."
           maxLength={120}
         />
         <input type="submit" value="&rarr;" className="factoryInput__arrow" />
       </div>
-
-
-      <input
-        id="attach-file"
-        type="file"
-        accept="image/*"
-        onChange={onFileChange}
-        style={{
-          opacity: 0,
-        }}
-      />
 
 
     </form>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AppRouter from "./Router";
 import { authService } from "../fbase";
+import Loading from "./Loading";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -47,7 +48,7 @@ function App() {
           userObj={userObj}
         />
       ) : (
-        "Initializing..."
+        <Loading />
       )}
       {/* props 내려주기 */}
     </>
