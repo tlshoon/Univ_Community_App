@@ -10,7 +10,6 @@ const TweetFactory = ({ userObj }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // window.scrollTo(0,document.body.scrollHeight)
     if (tweet === "") {
       return;
     }
@@ -51,8 +50,8 @@ const TweetFactory = ({ userObj }) => {
   const ClearAttachment = () => setAttachment("");
 
   return (
-    <form onSubmit={onSubmit} className="factoryForm">
-      
+    <form onSubmit={onSubmit} className="photo">
+
       <input
         id="attach-file"
         type="file"
@@ -62,15 +61,9 @@ const TweetFactory = ({ userObj }) => {
           opacity: 0,
         }}
       />
-      <label htmlFor="attach-file" className="factoryInput__label">
-        {/* <span>Add photos</span> */}
-        <FontAwesomeIcon icon={faPlus} />
-      </label>
-
-
       {attachment && (
         <div className="factoryForm__attachment">
-          <img src={attachment} style={{ backgroundImage: attachment,}} />
+          <img src={attachment} style={{ backgroundImage: attachment }} />
           <div className="factoryForm__clear" onClick={ClearAttachment}>
             <span>Remove</span>
             <FontAwesomeIcon icon={faTimes} />
@@ -78,19 +71,24 @@ const TweetFactory = ({ userObj }) => {
         </div>
       )}
 
-      <div className="factoryInput__container">
-        <input
-          className="factoryInput__input"
-          value={tweet}
-          onChange={onChange}
-          type="text"
-          placeholder="메세지를 입력해주세요."
-          maxLength={120}
-        />
-        <input type="submit" value="&rarr;" className="factoryInput__arrow" />
+      <div className="factoryForm">
+        <div className="factoryInput__container">
+          <label htmlFor="attach-file" className="factoryInput__label">
+            <div className="plus">+</div>
+            {/* <FontAwesomeIcon icon={faPlus} className="plus" /> */}
+          </label>
+
+          <input
+            className="factoryInput__input"
+            value={tweet}
+            onChange={onChange}
+            type="text"
+            placeholder="메세지를 입력해주세요."
+            maxLength={120}
+          />
+          <input type="submit" value="&rarr;" className="factoryInput__arrow" />
+        </div>
       </div>
-
-
     </form>
   );
 };

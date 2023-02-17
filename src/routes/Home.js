@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Tweet from "../components/Tweet";
 import TweetFactory from "../components/TweetFactory";
 import { dbService } from "../fbase";
@@ -33,11 +33,16 @@ const Home = ({ userObj }) => {
       });
   }, []);
 
+  const scrollRef = useRef();
+  useEffect(() => {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  });
+
   return (
-    <div className="container">
-      <div style={{ marginTop: 30 }}>
+    <div className="container" ref = {scrollRef} id="ChatRoom">
+      <div style={{ marginTop: 10 }} >
         {tweets.map((tweet) => (
-          <Tweet
+          <Tweet 
             key={tweet.id}
             Tweetobj={tweet}
             isOwner={tweet.creatorId === userObj.uid}

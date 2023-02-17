@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { dbService, storageService } from "../fbase";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Tweet = ({ Tweetobj, isOwner, userObj }) => {
   // const [editing, setEditing] = useState(false);

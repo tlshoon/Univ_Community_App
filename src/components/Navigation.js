@@ -5,7 +5,7 @@ import { faUser, faSchool } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = ({ userObj }) => (
   <nav>
-    <ul style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>
+    <ul style={{ display: "flex", justifyContent: "center", marginTop: 35 }}>
       <li>
         <Link to="/" style={{ marginRight: 10 }}>
           <FontAwesomeIcon icon={faSchool} color={"#04AAFF"} size="2x" />
