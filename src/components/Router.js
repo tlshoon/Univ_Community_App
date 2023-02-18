@@ -8,7 +8,7 @@ import Auth from "../routes/Auth";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile";
 import Navigation from "./Navigation";
-import FreeTalk from "../routes/FreeTalk";
+import FreeTalk from "../pages/FreeTalk";
 
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
@@ -41,7 +41,6 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
               <FreeTalk userObj={userObj} />
               </Route> 
             
-
             <Redirect from="*" to="/" />
           </div>
         ) : (
