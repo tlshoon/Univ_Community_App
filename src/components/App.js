@@ -39,6 +39,13 @@ function App() {
   //   console.log(authService.currentUser)
   // },2000)
 
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  });
   return (
     <>
       {init ? (

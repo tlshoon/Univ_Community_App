@@ -26,7 +26,7 @@ const Profile = ({ refreshUser, userObj, parentFunction }) => {
   };
 
   return (
-    <div className="container">
+    <div className="containers">
       <form onSubmit={onSubmit} className="profileForm">
         <input
           onChange={onChange}
