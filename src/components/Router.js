@@ -9,6 +9,7 @@ import Home from "../routes/Home";
 import Profile from "../routes/Profile";
 import Navigation from "./Navigation";
 import FreeTalk from "../pages/FreeTalk";
+import Freelecture from "../pages/Freelecture";
 
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
@@ -39,6 +40,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
       
             <Route exact path="/freetalk">
               <FreeTalk userObj={userObj} />
+              </Route> 
+
+              <Route exact path="/freelecture">
+              <Freelecture />
               </Route> 
             
             <Redirect from="*" to="/" />

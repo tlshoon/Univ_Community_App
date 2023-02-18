@@ -6,6 +6,7 @@ const Home = ({ userObj }) => {
   
   return (
     <div className="container" id="ChatRoom">
+
       <div style={{ marginTop: 10 }} className="freeForm">
         <div className="nweet">
           <Link to="/FreeTalk">
@@ -13,7 +14,17 @@ const Home = ({ userObj }) => {
            </Link>
         </div>
       </div>
+      
+      <div style={{ marginTop: 10 }} className="freeForm">
+        <div className="nweet">
+          <Link to="/Freelecture">
+           <div>강의</div>
+           </Link>
+        </div>
+      </div>
+
     </div>
+    
   );
 };
 
