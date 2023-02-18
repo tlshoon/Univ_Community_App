@@ -9,7 +9,7 @@ const Home = ({ userObj }) => {
       <div style={{ marginTop: 10 }} className="freeForm">
         <div className="nweet">
           <Link to="/FreeTalk">
-           자유게시판
+           <div>자유게시판</div>
            </Link>
         </div>
       </div>
