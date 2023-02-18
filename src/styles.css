@@ -210,7 +210,7 @@ form {
   margin-bottom: 5px;
 }
 
-/* .nweet {
+.nweet {
   text-align: center;
   margin-bottom: 20px;
   background-color: white;
@@ -225,9 +225,15 @@ form {
 } 
 
 
-.nweet h4 {
-  font-size: 14px;
-} */
+.nweet div {
+  font-size: 15px;
+}
+
+.freeForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .my-text-div {
   display: flex;

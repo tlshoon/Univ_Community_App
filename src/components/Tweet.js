@@ -1,55 +1,10 @@
-import React, { useState } from "react";
-import { dbService, storageService } from "../fbase";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
-const Tweet = ({ Tweetobj, isOwner, userObj }) => {
-  // const [editing, setEditing] = useState(false);
-  // const [newTweet, setNewTweet] = useState(Tweetobj.text);
-  
-  // const onDeleteClick = async () => {
-  //   const ok = window.confirm("트윗을 지울까요?");
-  //   if (ok) {
-  //     await dbService.doc(`tweets/${Tweetobj.id}`).delete();
-  //     await storageService.refFromURL(Tweetobj.attachmentUrl).delete();
-  //   }
-  // };
-
-  // const toggleEditing = () => setEditing((prev) => !prev);
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-    // await dbService.doc(`tweets/${Tweetobj.id}`).update({
-    //   text: newTweet,
-    // });
-    // setEditing(false);
-  // };
-  // const onChange = (e) => {
-  //   setNewTweet(e.target.value);
-  // };
+const Tweet = ({ Tweetobj, isOwner }) => {
 
   return (
     <div className={isOwner ? "my-text-div" : "friend-text-div"}>
-      <div className={isOwner ? "my-text-container" : "friend-text-container"}>
-        {/* {editing ? (
-          <>
-            <form onSubmit={onSubmit} className="container nweetEdit">
-              <input
-                type="text"
-                placeholder="Edit your Tweet. "
-                value={newTweet}
-                required
-                autoFocus
-                onChange={onChange}
-                className="formInput"
-              />
-              <input type="submit" value="Update Tweet" className="formBtn" />
-            </form>
-            <span onClick={toggleEditing} className="formBtn cancelBtn">
-              Cancel
-            </span>
-          </>
-        ) : ( */}
-          <>
+      <div className={isOwner ? "my-text-container" : "friend-text-container"}>    
             {!isOwner && <div className="othername">{Tweetobj.profileName}</div>}
             {Tweetobj.attachmentUrl && (
               <img className="img_size" src={Tweetobj.attachmentUrl} />
@@ -57,18 +12,6 @@ const Tweet = ({ Tweetobj, isOwner, userObj }) => {
             <h4 className={isOwner ? "my-text" : "friend-text"}>
               {Tweetobj.text}
             </h4>
-            {/* {isOwner && (
-              <div className="nweet__actions">
-                <span onClick={onDeleteClick}>
-                  <FontAwesomeIcon icon={faTrash} />
-                </span>
-                <span onClick={toggleEditing}>
-                  <FontAwesomeIcon icon={faPencilAlt} />
-                </span>
-              </div>
-            )} */}
-          </>
-        {/* )} */}
       </div>
     </div>
   );

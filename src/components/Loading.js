@@ -7,7 +7,7 @@ const Loading = () => {
   return (
     <Background>
     <LoadingText></LoadingText>
-    <img src={Spinner} alt="로딩중" width="5%" />
+    <img src={Spinner} alt="로딩중" width="10%" height="auto" />
   </Background>
   )
 };

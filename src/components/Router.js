@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   HashRouter as Router,
   Redirect,
@@ -9,6 +8,8 @@ import Auth from "../routes/Auth";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile";
 import Navigation from "./Navigation";
+import FreeTalk from "../routes/FreeTalk";
+
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
   return (
@@ -31,9 +32,16 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
             <Route exact path="/">
               <Home userObj={userObj} />
             </Route>
+
             <Route exact path="/profile">
               <Profile userObj={userObj} refreshUser={refreshUser} />
             </Route>
+      
+            <Route exact path="/freetalk">
+              <FreeTalk userObj={userObj} />
+              </Route> 
+            
+
             <Redirect from="*" to="/" />
           </div>
         ) : (
