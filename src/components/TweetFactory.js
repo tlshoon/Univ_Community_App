@@ -63,7 +63,7 @@ const TweetFactory = ({ userObj }) => {
       />
       {attachment && (
         <div className="factoryForm__attachment">
-          <img src={attachment} style={{ backgroundImage: attachment, marginRight: "10px" }} />
+          <img src={attachment} style={{ backgroundImage: attachment, marginRight: "10px" }} alt=""/>
           <div className="factoryForm__clear" onClick={ClearAttachment}>
             {/* <span>Remove</span> */}
             <FontAwesomeIcon icon={faTimes}/>

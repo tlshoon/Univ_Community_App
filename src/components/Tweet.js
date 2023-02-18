@@ -7,7 +7,7 @@ const Tweet = ({ Tweetobj, isOwner }) => {
       <div className={isOwner ? "my-text-container" : "friend-text-container"}>    
             {!isOwner && <div className="othername">{Tweetobj.profileName}</div>}
             {Tweetobj.attachmentUrl && (
-              <img className="img_size" src={Tweetobj.attachmentUrl} />
+              <img className="img_size" src={Tweetobj.attachmentUrl} alt="" />
             )}
             <h4 className={isOwner ? "my-text" : "friend-text"}>
               {Tweetobj.text}

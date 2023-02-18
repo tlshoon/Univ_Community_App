@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Tweet from "../components/Tweet";
 import TweetFactory from "../components/TweetFactory";
 import { dbService } from "../fbase";
@@ -38,11 +38,24 @@ const FreeTalk = ({ userObj }) => {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   });
 
+  const listRef = useRef();
+
+  useLayoutEffect( () => {
+    const detectMobileKeyboard = () => {
+      if(document.activeElement.tagName=='INPUT'){
+        listRef.current.scrollIntoView({block:'end'});
+      }
+    } 
+    window.addEventListener("resize",detectMobileKeyboard);
+    return _ => window.removeEventListener('resize',detectMobileKeyboard);
+  },[])
+  
   return (
     <div className="container" ref = {scrollRef} id="ChatRoom">
       <div style={{ marginTop: 10 }} >
         {tweets.map((tweet) => (
           <Tweet 
+            innerRef={listRef}
             key={tweet.id}
             Tweetobj={tweet}
             isOwner={tweet.creatorId === userObj.uid}
@@ -50,7 +63,9 @@ const FreeTalk = ({ userObj }) => {
           />
         ))}
       </div>
+      <div className="input_section">
       <TweetFactory userObj={userObj} />
+      </div>
     </div>
   );
 };
