@@ -51,7 +51,7 @@ const FreeTalk = ({ userObj }) => {
   },[])
   
   return (
-    <div className="container" ref = {scrollRef} id="ChatRoom">
+    <div className="talk_container" ref = {scrollRef} id="ChatRoom">
       <div style={{ marginTop: 10 }} >
         {tweets.map((tweet) => (
           <Tweet 
