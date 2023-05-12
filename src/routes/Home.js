@@ -1,30 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const Home = ({ userObj }) => {
-  
   return (
     <div className="container" id="ChatRoom">
-
       <div style={{ marginTop: 10 }} className="freeForm">
         <div className="nweet">
           <Link to="/FreeTalk">
-           <div>자유게시판</div>
-           </Link>
-        </div>
-      </div>
-      
-      <div style={{ marginTop: 10 }} className="freeForm">
-        <div className="nweet">
-          <Link to="/Freelecture">
-           <div>강의</div>
-           </Link>
+            <div>자유게시판</div>
+          </Link>
         </div>
       </div>
 
+      <div style={{ marginTop: 10 }} className="freeForm">
+        <div className="nweet">
+          <Link to="/Freelecture">
+            <div>기숙사 게시판</div>
+          </Link>
+        </div>
+      </div>
     </div>
-    
   );
 };
 
