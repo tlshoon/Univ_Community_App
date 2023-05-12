@@ -28,6 +28,44 @@ Firebase
 
 <br>
 
+## 🗂 파일구조
+
+```txt
+* src-*             
+   ├─ components
+   │  ├─ App.js
+   │  ├─ AuthForm.js
+   │  ├─ Loading.js
+   │  ├─ Navigation.js
+   │  ├─ Router.js
+   │  ├─ Styles.js
+   │  ├─ Tweet.js
+   │  ├─ TweetFactory.js
+   │  └─ assets
+   │     └─ spinner.gif
+   ├─ fbase.js
+   ├─ index.js
+   ├─ pages
+   │  ├─ FreeTalk.js
+   │  └─ Freelecture.js
+   ├─ routes
+   │  ├─ Auth.js
+   │  ├─ Home.js
+   │  └─ Profile.js
+   └─ styles.css
+```
+
+<br>
+
+## 🖥️ client
+클라이언트 실행
+```
+npm run start
+```
+port: 4000
+
+<br>
+
 ### 🔎 기능 설명
 
 <hr>
